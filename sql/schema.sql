@@ -19,11 +19,11 @@ create table store (
     constraint di_merch primary key(theater_id, st_name)
 );
 CREATE TABLE review (
-  movie_id varchar(20) NOT NULL,
-  rate` int(11) NOT NULL,
-  wr_review varchar(200) NOT NULL,
-  wr_date timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (movie_id)
+    movie_id varchar(20) NOT NULL,
+    rate int(11) NOT NULL,
+    wr_review varchar(200) NOT NULL,
+    wr_date timestamp NULL DEFAULT NULL,
+    PRIMARY KEY (movie_id)
 );
 create table customer (
     customer_id varchar(20) not null,
@@ -36,12 +36,12 @@ create table customer (
     primary key(customer_id)
 );
 CREATE TABLE theater (
-  theater_id varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
-  region varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  _2d int(11) DEFAULT NULL,
-  _3d int(11) DEFAULT NULL,
-  _4d int(11) DEFAULT NULL,
-  PRIMARY KEY (theater_id)
+    theater_id varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+    region varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+    _2d int(11) DEFAULT NULL,
+    _3d int(11) DEFAULT NULL,
+    _4d int(11) DEFAULT NULL,
+    PRIMARY KEY (theater_id)
 );
 create table time_table(
     theater_id varchar(20) not null, 
@@ -52,20 +52,20 @@ create table time_table(
     foreign key (theater_id) references theater(theater_id)
 );
 CREATE TABLE movie_info (
-  movie_id varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
-  movie_title varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
-  age_limit int(11) DEFAULT NULL,
-  genre varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
-  _3d tinyint(1) NOT NULL,
-  _4d tinyint(1) NOT NULL,
-  running_time int(11) NOT NULL,
-  director varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
-  main_actor varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
-  country varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
-  opening_day date NOT NULL,
-  picture varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  isPlayed tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`movie_id`)
+    movie_id varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+    movie_title varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+    age_limit int(11) DEFAULT NULL,
+    genre varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+    _3d tinyint(1) NOT NULL,
+    _4d tinyint(1) NOT NULL,
+    running_time int(11) NOT NULL,
+    director varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+    main_actor varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+    country varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+    opening_day date NOT NULL,
+    picture varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+    isPlayed tinyint(1) NOT NULL DEFAULT '0',
+    PRIMARY KEY (`movie_id`)
 );
 create table reserve_info(
     customer_id varchar(20) not null,
