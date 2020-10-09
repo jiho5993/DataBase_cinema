@@ -3,9 +3,9 @@ const axios = require('axios');
 const jwt = require('jsonwebtoken')
 var mysql=require('mysql');
 var connection = mysql.createConnection({
-  host     : 'ericagallery.cpi3i6d3shqc.us-east-2.rds.amazonaws.com',
-  user     : 'admin',
-  password : 'databasepbl2!',
+  host     : 'localhost',
+  user     : 'root',
+  password : '1234',
   database : 'ericagallery',
   port : 3306
 });

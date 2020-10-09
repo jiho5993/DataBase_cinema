@@ -44,7 +44,7 @@ CREATE TABLE theater (
     PRIMARY KEY (theater_id)
 );
 create table time_table(
-    theater_id varchar(20) not null, 
+    theater_id varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
     screen_num integer not null,
     show_time time not null,
     movie_id varchar(20) not null,
@@ -65,7 +65,7 @@ CREATE TABLE movie_info (
     opening_day date NOT NULL,
     picture varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
     isPlayed tinyint(1) NOT NULL DEFAULT '0',
-    PRIMARY KEY (`movie_id`)
+    PRIMARY KEY (movie_id)
 );
 create table reserve_info(
     customer_id varchar(20) not null,
@@ -74,8 +74,8 @@ create table reserve_info(
     seat_info integer not null,
     screen_num integer not null,
     pay integer not null,
-    theater_id varchar(20) not null,
-    movie_id varchar(20) not null,
+    theater_id varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+    movie_id varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
     primary key (customer_id),
     foreign key (movie_id) references movie_info(movie_id),
     foreign key (theater_id) references time_table(theater_id)
@@ -89,7 +89,7 @@ create table clerk (
     salary integer not null,
     point integer not null,
     work_time time not null,
-    theater_id varchar(20) not null,
+    theater_id varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
     primary key(clerk_id),
     foreign key(theater_id) references theater(theater_id)
 );
@@ -106,7 +106,7 @@ create table manager (
     manager_name varchar(20) not null,
     manager_birth date not null,
     manager_phone varchar(20) not null,
-    theater_id varchar(20) not null,
+    theater_id varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
     primary key(manager_id),
     foreign key(theater_id) references theater(theater_id)
 );
